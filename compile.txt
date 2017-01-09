@@ -1,0 +1,2 @@
+nasm -f macho64 file.s -o file.o
+ld file.o -macosx_version_min 10.8 -lSystem
