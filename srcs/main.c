@@ -114,5 +114,48 @@ int		main(void)
 		printf("ft_isprint is valid.\n");
 	else
 		printf("ft_isprint is failed.\n");
+
+	ft_ret[0] = ft_toupper('0');
+	ft_ret[1] = ft_toupper('9');
+	ft_ret[2] = ft_toupper(15);
+	ft_ret[3] = ft_toupper('a');
+	ft_ret[4] = ft_toupper(260);
+
+	ret[0] = toupper('0');
+	ret[1] = toupper('9');
+	ret[2] = toupper(15);
+	ret[3] = toupper('a');
+	ret[4] = toupper(260);
+
+	if (ret[0] == ft_ret[0]
+		&& ret[1] == ft_ret[1]
+		&& ret[2] == ft_ret[2]
+		&& ret[3] == ft_ret[3]
+		&& ret[4] == ft_ret[4])
+		printf("ft_toupper is valid.\n");
+	else
+		printf("ft_toupper is failed.\n");
+
+	ft_ret[0] = ft_tolower('0');
+	ft_ret[1] = ft_tolower('9');
+	ft_ret[2] = ft_tolower(15);
+	ft_ret[3] = ft_tolower('a');
+	ft_ret[4] = ft_tolower(260);
+
+	ret[0] = tolower('0');
+	ret[1] = tolower('9');
+	ret[2] = tolower(15);
+	ret[3] = tolower('a');
+	ret[4] = tolower(260);
+
+	if (ret[0] == ft_ret[0]
+		&& ret[1] == ft_ret[1]
+		&& ret[2] == ft_ret[2]
+		&& ret[3] == ft_ret[3]
+		&& ret[4] == ft_ret[4])
+		printf("ft_tolower is valid.\n");
+	else
+		printf("ft_tolower is failed.\n");
+
 	return (0);
 }
