@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include "libftasm.h"
+#include "libfts.h"
 
 int		main(void)
 {
