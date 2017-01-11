@@ -24,7 +24,8 @@ SRCS_S		=	$(SRCS_DIR)/ft_strcat.s			\
 				$(SRCS_DIR)/ft_isalpha.s		\
 				$(SRCS_DIR)/ft_isdigit.s		\
 				$(SRCS_DIR)/ft_isalnum.s		\
-				$(SRCS_DIR)/ft_isascii.s
+				$(SRCS_DIR)/ft_isascii.s		\
+				$(SRCS_DIR)/ft_isprint.s
 
 SRCS_DIR	=	srcs
 HEADER		=	includes
