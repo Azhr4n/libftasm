@@ -2,6 +2,7 @@ section .text
 	global _ft_strcat
 
 _ft_strcat:
+	enter 0, 0
 	push rdi
 loop:
 	cmp byte[rdi], 0
@@ -20,4 +21,5 @@ end:
 	mov byte[rdi], 0
 	pop rdi
 	mov rax, rdi
+	leave
 	ret
