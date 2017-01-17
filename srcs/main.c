@@ -60,10 +60,7 @@ int		main(void)
 {
 	// isTest();
 
-	int		fd;
+	printf("%d\n", ft_putnbr(-2486));
 
-	fd = open("Makefile", O_RDONLY);
-	ft_cat(fd);
-	close(fd);
 	return (0);
 }

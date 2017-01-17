@@ -33,7 +33,13 @@ SRCS_S		=	$(SRCS_DIR)/ft_strcat.s			\
 				$(SRCS_DIR)/ft_memset.s			\
 				$(SRCS_DIR)/ft_memcpy.s			\
 				$(SRCS_DIR)/ft_strdup.s			\
-				$(SRCS_DIR)/ft_cat.s
+				$(SRCS_DIR)/ft_cat.s			\
+				$(SRCS_DIR)/ft_strcmp.s			\
+				$(SRCS_DIR)/ft_strncmp.s		\
+				$(SRCS_DIR)/ft_strstr.s			\
+				$(SRCS_DIR)/ft_strcpy.s			\
+				$(SRCS_DIR)/ft_putnbr.s
+
 
 
 SRCS_DIR	=	srcs

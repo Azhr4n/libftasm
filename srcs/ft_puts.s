@@ -14,22 +14,22 @@ _ft_puts:
 	enter 0, 0
 	push rdi
 	call _ft_strlen
-
 	mov rdx, rax
 	pop rsi
 	mov rdi, 1
 	mov rax, 0x2000004
 	syscall
-
 	cmp rax, -1
 	je end
 	jmp nl
+
 null:
 	mov rdi, 1
 	lea rsi, [rel nullmsg.string]
 	mov rdx, nullmsg.len
 	mov rax, 0x2000004
 	syscall
+
 nl:
 	mov rdx, 1
 	lea rsi, [rel newline]
@@ -38,6 +38,7 @@ nl:
 	mov rax, 10
 	leave
 	ret
+
 end:
 	leave
 	ret
