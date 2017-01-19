@@ -60,7 +60,7 @@ int		main(void)
 {
 	// isTest();
 
-	printf("%d\n", ft_putnbr(-2486));
+	ft_putnbr('A');
 
 	return (0);
 }

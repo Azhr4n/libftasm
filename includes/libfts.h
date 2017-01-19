@@ -41,6 +41,6 @@ int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strstr(const char *big, const char *little);
 char		*ft_strcpy(char *dst, const char *src);
-int			ft_putnbr(int n);
+void		ft_putnbr(int n);
 
 #endif
