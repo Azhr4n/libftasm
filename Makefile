@@ -20,7 +20,8 @@ CFLAGS		=	-Wall -Wextra -Werror
 SFLAGS		=	-f macho64
 
 SRCS_C		=	$(SRCS_DIR)/main.c
-SRCS_S		=	$(SRCS_DIR)/ft_strcat.s			\
+SRCS_S		=	$(SRCS_DIR)/ft_bzero.s		\
+				$(SRCS_DIR)/ft_strcat.s			\
 				$(SRCS_DIR)/ft_isalpha.s		\
 				$(SRCS_DIR)/ft_isdigit.s		\
 				$(SRCS_DIR)/ft_isalnum.s		\
