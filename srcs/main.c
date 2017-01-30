@@ -97,7 +97,7 @@ void	putsTest(void)
 	test[0] = strdup("Bonjour ceci est un test.");
 	test[1] = strdup("");
 	test[2] = strdup(" 	test 	");
-
+	error = 0;
 	for (i = 0; i < 3; i++)
 	{
 		ret[0] = ft_puts(test[i]);
@@ -163,20 +163,150 @@ void	memsetTest(void)
 void	memcpyTest(void)
 {
 	char	*test[2];
-	int		len;
+	char	cpy[] = "Bonjour ceci est un test";
 
-	test[1] = strdup("Style is a bomb di bomb diggydiggy")
-	len = strlen(test[1]);
-	test[0] = (char *)malloc(sizeof(char) * (len + 1));
+	test[0] = strdup("Style is a bomb di bomb diggydiggy");
+	test[1] = strdup("Style is a bomb di bomb diggydiggy");
 
-	bzero(test[0], 10);
-	bzero(test[1], 10);
+	ft_memcpy(test[0], cpy, 10);
+	memcpy(test[1], cpy, 10);
 
+	ft_memcpy(test[0] + 10, cpy + 8, 10);
+	memcpy(test[1] + 10, cpy + 8, 10);
 
 	if (!strcmp(test[0], test[1]))
 		printf("ft_memcpy is valid.\n");
 	else
 		printf("ft_memcpy is invalid.\n");
+}
+
+void	strdupTest(void)
+{
+	char	*test[2];
+
+	test[0] = ft_strdup("Ceci est un abordage moussaillon.");
+	test[1] = strdup("Ceci est un abordage moussaillon.");
+	if (!strcmp(test[0], test[1]))
+		printf("ft_strdup is valid.\n");
+	else
+		printf("ft_strdup is invalid.\n");
+}
+
+void	strcmpTest(void)
+{
+	char	*test[2];
+	int		ret[2];
+	int		error = 0;
+
+	test[0] = "Bonjour on test.";
+	test[1] = "Bonjour on test.";
+
+	ret[0] = ft_strcmp(test[0], test[1]);
+	ret[1] = strcmp(test[0], test[1]);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	test[0] = "Bonjour ca fail.";
+	test[1] = "Bonjour on test.";
+	ret[0] = ft_strcmp(test[0], test[1]);
+	ret[1] = strcmp(test[0], test[1]);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	if (error)
+		printf("ft_strcmp is invalid\n");
+	else
+		printf("ft_strcmp is valid.\n");
+
+	test[0] = "Bonjour on test.";
+	test[1] = "Bonjour on test.";
+
+	ret[0] = ft_strncmp(test[0], test[1], 7);
+	ret[1] = strncmp(test[0], test[1], 7);
+	if (ret[0] != ret[1])
+		error = 1;
+	ret[0] = ft_strncmp(test[0], test[1], 25);
+	ret[1] = strncmp(test[0], test[1], 25);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	test[0] = "Bonjour ca fail.";
+	test[1] = "Bonjour on test.";
+	ret[0] = ft_strncmp(test[0], test[1], 7);
+	ret[1] = strncmp(test[0], test[1], 7);
+	if (ret[0] != ret[1])
+		error = 1;
+	ret[0] = ft_strncmp(test[0], test[1], 25);
+	ret[1] = strncmp(test[0], test[1], 25);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	if (error)
+		printf("ft_strncmp is invalid\n");
+	else
+		printf("ft_strncmp is valid.\n");
+}
+
+void	strstrTest(void)
+{
+	char	*test[2];
+	char	*ret[2];
+	int		error = 0;
+
+	test[0] = "Bonjour on cherche ici.";
+	test[1] = "n cher";
+
+	ret[0] = ft_strstr(test[0], test[1]);
+	ret[1] = strstr(test[0], test[1]);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	test[1] = "Bob";
+	ret[0] = ft_strstr(test[0], test[1]);
+	ret[1] = strstr(test[0], test[1]);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	test[1] = "";
+	ret[0] = ft_strstr(test[0], test[1]);
+	ret[1] = strstr(test[0], test[1]);
+	if (ret[0] != ret[1])
+		error = 1;
+
+	if (!error)
+		printf("ft_strstr is valid.\n");
+	else
+		printf("ft_strstr is not valid\n");
+}
+
+void	strcpyTest(void)
+{
+	char	*str;
+	char	*ret[2];
+
+	ret[0] = (char *)malloc(sizeof(char) * 30);
+	ret[1] = (char *)malloc(sizeof(char) * 30);
+
+	str = "Ca copie, ca copie";
+	ret[0] = ft_strcpy(ret[0], str);
+	ret[1] = ft_strcpy(ret[1], str);
+
+	if (strcmp(ret[0], ret[1]))
+		printf("ft_strcpy is invalid.\n");
+	else
+		printf("ft_strcpy is valid.\n");
+}
+
+void	putnbrTest(void)
+{
+	ft_putnbr(0);
+	printf("\n");
+	ft_putnbr(-1);
+	printf("\n");
+	ft_putnbr(-2147483648);
+	printf("\n");
+	ft_putnbr(2147483647);
+	printf("\n");
 }
 
 int		main(void)
@@ -187,6 +317,12 @@ int		main(void)
 	putsTest();
 	strlenTest();
 	memsetTest();
-	memsetCpy();
+	memcpyTest();
+	strdupTest();
+	//Bonus
+	strcmpTest();
+	strstrTest();
+	strcpyTest();
+	putnbrTest();
 	return (0);
 }

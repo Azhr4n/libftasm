@@ -1,6 +1,3 @@
-section .data
-	null db "(null)"
-
 section .text
 	global _ft_strstr
 	extern _ft_strlen
@@ -44,7 +41,7 @@ reset:
 	jmp search
 
 none:
-	lea rax, [rel null]
+	mov rax, 0
 	leave
 	ret
 
